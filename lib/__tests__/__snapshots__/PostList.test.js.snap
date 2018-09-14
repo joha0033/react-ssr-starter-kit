@@ -1,0 +1,82 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PostList renders post list 1`] = `
+<div>
+  <div
+    style={
+      Object {
+        "borderBottomColor": "#abc",
+        "borderBottomStyle": "solid",
+        "borderBottomWidth": 2,
+        "marginBottom": 10,
+        "paddingBottom": 10,
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "fontWeight": "bold",
+        }
+      }
+    />
+    <div
+      style={
+        Object {
+          "paddingBottom": 10,
+          "paddingTop": 10,
+        }
+      }
+    >
+      Author: 
+       
+    </div>
+    <div
+      style={
+        Object {
+          "paddingLeft": 20,
+          "paddingRight": 10,
+        }
+      }
+    />
+  </div>
+  <div
+    style={
+      Object {
+        "borderBottomColor": "#abc",
+        "borderBottomStyle": "solid",
+        "borderBottomWidth": 2,
+        "marginBottom": 10,
+        "paddingBottom": 10,
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "fontWeight": "bold",
+        }
+      }
+    />
+    <div
+      style={
+        Object {
+          "paddingBottom": 10,
+          "paddingTop": 10,
+        }
+      }
+    >
+      Author: 
+       
+    </div>
+    <div
+      style={
+        Object {
+          "paddingLeft": 20,
+          "paddingRight": 10,
+        }
+      }
+    />
+  </div>
+</div>
+`;
