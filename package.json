@@ -7,8 +7,8 @@
     "lib": "lib"
   },
   "scripts": {
-    "dev": "pm2 start lib/server.js --watch --interpreter babel-node",
-    "test": "jest --watch",
+    "dev": "NODE_PATH=./lib pm2 start lib/server.js --watch --interpreter babel-node",
+    "test": "jest --watchAll",
     "webpack": "webpack -wd"
   },
   "repository": {
@@ -37,6 +37,7 @@
     ]
   },
   "dependencies": {
+    "axios": "^0.18.0",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.5",
