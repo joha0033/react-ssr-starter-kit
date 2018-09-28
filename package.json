@@ -36,7 +36,14 @@
   "babel": {
     "presets": [
       "react",
-      ["env", { "targets": { "node": "current" } }]
+      [
+        "env",
+        {
+          "targets": {
+            "node": "current"
+          }
+        }
+      ]
     ],
     "plugins": [
       "transform-class-properties",
@@ -61,6 +68,9 @@
     "prop-types": "^15.6.2",
     "react": "^16.5.1",
     "react-dom": "^16.5.1",
+    "react-redux": "^5.0.7",
+    "redux": "^4.0.0",
+    "redux-thunk": "^2.3.0",
     "webpack": "^4.19.0"
   },
   "devDependencies": {
@@ -70,6 +80,7 @@
     "eslint-plugin-react": "^7.11.1",
     "jest": "^23.6.0",
     "react-test-renderer": "^16.5.1",
+    "redux-logger": "^3.0.6",
     "webpack-cli": "^3.1.0"
   }
 }
