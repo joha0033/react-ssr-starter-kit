@@ -10,7 +10,7 @@ module.exports = {
   },
   entry: {
     vendor: [
-      'babel-polyfill', 
+      'babel-polyfill',
       'react',
       'react-dom',
       'redux',
@@ -47,27 +47,27 @@ module.exports = {
       }
     }),
   ],
-  optimization: {
-    splitChunks: {
-      chunks: 'async',
-      minSize: 30000,
-      maxSize: 0,
-      minChunks: 1,
-      maxAsyncRequests: 5,
-      maxInitialRequests: 3,
-      automaticNameDelimiter: '~',
-      name: true,
-      cacheGroups: {
-        vendors: {
-          test: /[\\/]vendor[\\/]/,
-          priority: -10
-        },
-        default: {
-          minChunks: 2,
-          priority: -20,
-          reuseExistingChunk: true
-        }
-      }
-    }
-  }
+  // optimization: {
+  //   splitChunks: {
+  //     chunks: 'async',
+  //     minSize: 30000,
+  //     maxSize: 0,
+  //     minChunks: 1,
+  //     maxAsyncRequests: 5,
+  //     maxInitialRequests: 3,
+  //     automaticNameDelimiter: '~',
+  //     name: true,
+  //     cacheGroups: {
+  //       vendors: {
+  //         test: /[\\/]vendor[\\/]/,
+  //         priority: -10
+  //       },
+  //       default: {
+  //         minChunks: 2,
+  //         priority: -20,
+  //         reuseExistingChunk: true
+  //       }
+  //     }
+  //   }
+  // }
 }
