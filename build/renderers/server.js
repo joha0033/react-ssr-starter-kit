@@ -12,32 +12,30 @@ var _server = require('react-dom/server');
 
 var _server2 = _interopRequireDefault(_server);
 
-var _axios = require('axios');
+var _reactRedux = require('react-redux');
 
-var _axios2 = _interopRequireDefault(_axios);
+var _store = require('../src/store');
 
-var _stateApi = require('state-api');
+var _store2 = _interopRequireDefault(_store);
 
-var _stateApi2 = _interopRequireDefault(_stateApi);
-
-var _App = require('components/App');
+var _App = require('src/components/App');
 
 var _App2 = _interopRequireDefault(_App);
-
-var _config = require('config');
-
-var _config2 = _interopRequireDefault(_config);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 const serverRender = async () => {
+  const preloadedState = await _store2.default.getState();
 
-  const response = await _axios2.default.get(`http://${_config2.default.host}:${_config2.default.port}/data`);
-  const store = new _stateApi2.default(response.data);
+  const html = _server2.default.renderToString(_react2.default.createElement(
+    _reactRedux.Provider,
+    { store: _store2.default },
+    _react2.default.createElement(_App2.default, null)
+  ));
 
   return {
-    initialMarkup: _server2.default.renderToString(_react2.default.createElement(_App2.default, { store: store })),
-    initialData: response.data
+    preloadedState,
+    html
   };
 };
 
