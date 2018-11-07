@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Post Component Renders post to equal snapshot 1`] = `
+<div
+  style={
+    Object {
+      "borderBottomColor": "#abc",
+      "borderBottomStyle": "solid",
+      "borderBottomWidth": 2,
+      "marginBottom": 10,
+      "paddingBottom": 10,
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "fontWeight": "bold",
+      }
+    }
+  >
+    Text Editor
+  </div>
+  <div
+    style={
+      Object {
+        "paddingBottom": 10,
+        "paddingTop": 10,
+      }
+    }
+  >
+    Author: 
+    austin digger
+  </div>
+  <div
+    style={
+      Object {
+        "paddingLeft": 20,
+        "paddingRight": 10,
+      }
+    }
+  >
+    You think water moves fast?
+  </div>
+</div>
+`;
