@@ -15,12 +15,6 @@ var _Post = require('./Post');
 
 var _Post2 = _interopRequireDefault(_Post);
 
-var _propTypes = require('prop-types');
-
-var _propTypes2 = _interopRequireDefault(_propTypes);
-
-var _postList = require('../_actions/postList.actions');
-
 var _reactRedux = require('react-redux');
 
 var _lodash = require('lodash.pickby');
@@ -32,6 +26,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 class PostList extends _react2.default.Component {
   render() {
     const posts = () => {
+
       return (0, _lodash2.default)(this.props.postList.posts, post => {
         let SearchCriteria = this.props.searchBar.searchTerm;
         if (this.props.searchBar.searchTerm) {
@@ -49,34 +44,28 @@ class PostList extends _react2.default.Component {
           author
         });
 
-        return _react2.default.createElement(_Post2.default, {
-          key: index,
-          post: post
-        });
+        return _react2.default.createElement(
+          'div',
+          { key: index },
+          _react2.default.createElement(_Post2.default, { post: post })
+        );
       });
     };
 
-    const loading = () => _react2.default.createElement(
-      'div',
-      null,
-      'LOADING... '
-    );
+    // const loading = () => (<div>LOADING... </div>)
 
+    // return this.props.postList.loading
+    //   ? loading()
+    //   : postList() (
     return _react2.default.createElement(
       'div',
       null,
-
-      // posts()
-      this.props.postList.loading ? loading() : postList(posts())
+      postList()
     );
   }
 }
 
 exports.PostList = PostList;
-PostList.propTypes = {
-  fetchPosts: _propTypes2.default.func.isRequired
-};
-
 const mapStateToProps = exports.mapStateToProps = state => {
   const { postList, searchBar } = state;
   return {
@@ -85,12 +74,12 @@ const mapStateToProps = exports.mapStateToProps = state => {
   };
 };
 
-const mapDispatchToProps = dispatch => {
-  return {
-    fetchPosts: () => {
-      dispatch(_postList.postListActions.fetchPosts());
-    }
-  };
-};
+// const mapDispatchToProps = (dispatch) => {
+//   return {
+//     fetchPosts: () => {
+//       dispatch(postListActions.fetchPosts())
+//     }
+//   }
+// }
 
-exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(PostList);
+exports.default = (0, _reactRedux.connect)(mapStateToProps)(PostList);

@@ -26,7 +26,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 const serverRender = async () => {
   const preloadedState = await _store2.default.getState();
-
   const html = _server2.default.renderToString(_react2.default.createElement(
     _reactRedux.Provider,
     { store: _store2.default },

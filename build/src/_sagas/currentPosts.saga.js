@@ -1,45 +1,38 @@
-'use strict';
+// import { put, call, apply  } from 'redux-saga/effects'
+// import fetch from 'isomorphic-fetch'
+// import config from '../../config'
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
+// import {
+//   setPostList
+// } from './../_actions'
 
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+// export function* currentPostsSaga() {
+//   try{
+//     const URL = `http://${config.host}:${config.port}/data`
 
-exports.currentPostsSaga = currentPostsSaga;
+//     const response = yield call(fetch, URL)
+//     const data = yield apply(response, response.json)
 
-var _effects = require('redux-saga/effects');
+//     const mapIntoObject = (arr) => {
+//       return arr.reduce((acc, cur) => {
+//         acc[cur._id] = cur
+//         return acc
+//       }, {})
+//     }
 
-var _isomorphicFetch = require('isomorphic-fetch');
+//     let newRes = {}
+//     Object.keys(data).forEach((key) => {
+//       let obj = mapIntoObject(data[key], key)
+//       newRes = {
+//         ...newRes,
+//         [key]: obj
+//       }
+//     })
 
-var _isomorphicFetch2 = _interopRequireDefault(_isomorphicFetch);
+//     yield put(setPostList(newRes))
+//   } catch (error) {
+//     yield put({type: 'FETCH_FAILED', error})
+//   }
 
-var _config = require('../../config');
-
-var _config2 = _interopRequireDefault(_config);
-
-var _actions = require('./../_actions');
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function* currentPostsSaga() {
-  const URL = `http://${_config2.default.host}:${_config2.default.port}/data`;
-  const response = yield (0, _effects.call)(_isomorphicFetch2.default, URL);
-  const data = yield (0, _effects.apply)(response, response.json);
-  const mapIntoObject = arr => {
-    return arr.reduce((acc, cur) => {
-      acc[cur._id] = cur;
-      return acc;
-    }, {});
-  };
-  let newRes = {};
-
-  Object.keys(data).forEach(key => {
-    let obj = mapIntoObject(data[key], key);
-    newRes = _extends({}, newRes, {
-      [key]: obj
-    });
-  });
-
-  yield (0, _effects.put)((0, _actions.setPostList)(newRes));
-}
+// }
+"use strict";

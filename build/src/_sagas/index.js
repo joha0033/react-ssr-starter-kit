@@ -4,11 +4,11 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _currentPosts = require('./currentPosts.saga');
+var _getPostList = require('./getPostList.saga');
 
-Object.defineProperty(exports, 'currentPostsSaga', {
+Object.defineProperty(exports, 'getPostList', {
   enumerable: true,
   get: function () {
-    return _currentPosts.currentPostsSaga;
+    return _getPostList.getPostList;
   }
 });
