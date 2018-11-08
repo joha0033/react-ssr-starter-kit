@@ -20,8 +20,6 @@ var _store2 = _interopRequireDefault(_store);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// const store = new StateApi(window.initialData)
-
 _reactDom2.default.hydrate(_react2.default.createElement(
   _reactRedux.Provider,
   { store: _store2.default },

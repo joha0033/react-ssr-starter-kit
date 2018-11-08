@@ -30,7 +30,7 @@ const sagaMiddleware = exports.sagaMiddleware = (0, _reduxSaga2.default)();
 let middleware;
 process.env.NODE_ENV !== 'production' && process.env.NODE_ENV !== 'test' ? middleware = (0, _redux.applyMiddleware)(sagaMiddleware, _reduxThunk2.default, _reduxLogger.logger) : middleware = (0, _redux.applyMiddleware)(sagaMiddleware, _reduxThunk2.default);
 
-exports.default = (0, _redux.createStore)(_reducers2.default, {}, middleware);
+exports.default = (0, _redux.createStore)(_reducers2.default, middleware);
 
 
 (0, _initSagas.initSagas)(sagaMiddleware);
