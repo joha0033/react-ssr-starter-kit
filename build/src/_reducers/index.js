@@ -6,14 +6,16 @@ Object.defineProperty(exports, "__esModule", {
 
 var _redux = require('redux');
 
-var _postListReducer = require('./postListReducer');
+var _saga = require('./saga.reducer');
 
-var _searchBarReducer = require('./searchBarReducer');
+var _postList = require('./postList.reducer');
+
+var _searchBar = require('./searchBar.reducer');
 
 const rootReducer = (0, _redux.combineReducers)({
-  // state: {clientState: {loading: false}},
-  searchBar: _searchBarReducer.searchBar,
-  postList: _postListReducer.postList
+  saga: _saga.saga,
+  searchBar: _searchBar.searchBar,
+  postList: _postList.postList
 });
 
 exports.default = rootReducer;

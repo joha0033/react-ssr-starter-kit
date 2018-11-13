@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.postListActions = undefined;
+exports.postListActions = exports.fetchPosts = undefined;
 
 var _postList = require('../_services/postList.service');
 
@@ -13,7 +13,6 @@ const fetchingPosts = () => ({
     loading: true
   }
 });
-
 const postFetchSuccess = data => {
   return {
     type: 'POST_LIST_SUCCESS',
@@ -24,13 +23,12 @@ const postFetchSuccess = data => {
     }
   };
 };
-
 const postFetchFailure = error => ({
   type: 'POST_LIST_FAILURE',
   payload: error
 });
 
-const fetchPosts = () => {
+const fetchPosts = exports.fetchPosts = () => {
   return dispatch => {
     dispatch(fetchingPosts());
 
@@ -44,7 +42,6 @@ const fetchPosts = () => {
     });
   };
 };
-
 const postListActions = exports.postListActions = {
   fetchPosts
 };

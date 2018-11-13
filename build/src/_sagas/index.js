@@ -4,11 +4,11 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _getPostList = require('./getPostList.saga');
+var _startSaga = require('./startSaga.saga');
 
 Object.defineProperty(exports, 'getPostList', {
   enumerable: true,
   get: function () {
-    return _getPostList.getPostList;
+    return _startSaga.getPostList;
   }
 });

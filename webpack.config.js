@@ -1,11 +1,13 @@
 const path = require('path')
 const webpack = require('webpack')
+const CleanWebpackPlugin = require('clean-webpack-plugin')
 
 module.exports = {
   resolve: {
     modules: [
       path.resolve('./lib'),
-      path.resolve('./node_modules')
+      path.resolve('./node_modules'),
+      path.resolve('./__tests__')
     ]
   },
   entry: {
@@ -30,7 +32,7 @@ module.exports = {
     rules: [
       { 
         test: /\.(js|jsx)$/, 
-        exclude: /node_modules/, 
+        exclude: [/node_modules/],
         use: {
           loader: 'babel-loader',
           options: {
@@ -40,11 +42,36 @@ module.exports = {
       }
     ]
   },
+  devtool: 'inline-source-map',
   plugins: [
+    new CleanWebpackPlugin(['public']),
     new webpack.DefinePlugin({
       'process.env': {
         'NODE_ENV': JSON.stringify(process.env.NODE_ENV)
       }
     })
-  ]
+  ],
+  optimization: {
+    splitChunks: {
+      chunks: 'async',
+      minSize: 30000,
+      maxSize: 0,
+      minChunks: 1,
+      maxAsyncRequests: 5,
+      maxInitialRequests: 3,
+      automaticNameDelimiter: '~',
+      name: true,
+      cacheGroups: {
+        vendors: {
+          test: /[\\/]node_modules[\\/]/,
+          priority: -10
+        },
+        default: {
+          minChunks: 2,
+          priority: -20,
+          reuseExistingChunk: true
+        }
+      }
+    }
+  }
 }

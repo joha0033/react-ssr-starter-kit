@@ -14,6 +14,10 @@ var _server2 = _interopRequireDefault(_server);
 
 var _data = require('data');
 
+var _bodyParser = require('body-parser');
+
+var _bodyParser2 = _interopRequireDefault(_bodyParser);
+
 var _views = require('../views');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -21,10 +25,12 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 const app = (0, _express2.default)();
 
 app.use(_express2.default.static('public'));
+app.use(_bodyParser2.default.json());
 
 app.get('/', async (req, res) => {
-  const initialContent = await (0, _server2.default)();
-  res.send((0, _views.renderFullPage)(initialContent));
+  const { html, preloadedState } = await (0, _server2.default)();
+
+  res.send((0, _views.renderFullPage)(html, preloadedState));
 });
 
 app.get('/data', (req, res) => {

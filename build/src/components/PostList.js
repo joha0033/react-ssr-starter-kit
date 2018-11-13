@@ -21,9 +21,15 @@ var _lodash = require('lodash.pickby');
 
 var _lodash2 = _interopRequireDefault(_lodash);
 
+var _postList = require('../_actions/postList.actions');
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 class PostList extends _react2.default.Component {
+  componentDidMount() {
+    this.props.fetchPosts();
+  }
+
   render() {
     const posts = () => {
 
@@ -44,24 +50,16 @@ class PostList extends _react2.default.Component {
           author
         });
 
-        return _react2.default.createElement(
-          'div',
-          { key: index },
-          _react2.default.createElement(_Post2.default, { post: post })
-        );
+        return _react2.default.createElement(_Post2.default, { key: index, post: post });
       });
     };
 
-    // const loading = () => (<div>LOADING... </div>)
-
-    // return this.props.postList.loading
-    //   ? loading()
-    //   : postList() (
-    return _react2.default.createElement(
+    const loading = () => _react2.default.createElement(
       'div',
       null,
-      postList()
+      'LOADING... '
     );
+    return this.props.postList.loading ? loading() : postList();
   }
 }
 
@@ -74,12 +72,12 @@ const mapStateToProps = exports.mapStateToProps = state => {
   };
 };
 
-// const mapDispatchToProps = (dispatch) => {
-//   return {
-//     fetchPosts: () => {
-//       dispatch(postListActions.fetchPosts())
-//     }
-//   }
-// }
+const mapDispatchToProps = dispatch => {
+  return {
+    fetchPosts: () => {
+      dispatch((0, _postList.fetchPosts)());
+    }
+  };
+};
 
-exports.default = (0, _reactRedux.connect)(mapStateToProps)(PostList);
+exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(PostList);
