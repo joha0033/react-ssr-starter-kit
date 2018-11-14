@@ -3,7 +3,6 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.sagaMiddleware = undefined;
 
 var _redux = require('redux');
 
@@ -13,25 +12,27 @@ var _reduxThunk = require('redux-thunk');
 
 var _reduxThunk2 = _interopRequireDefault(_reduxThunk);
 
-var _reduxSaga = require('redux-saga');
-
-var _reduxSaga2 = _interopRequireDefault(_reduxSaga);
-
 var _reducers = require('./_reducers');
 
 var _reducers2 = _interopRequireDefault(_reducers);
 
-var _initSagas = require('./initSagas');
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-const sagaMiddleware = exports.sagaMiddleware = (0, _reduxSaga2.default)();
+// import createSagaMiddleware from 'redux-saga'
+// import { initSagas } from './initSagas'
+// export const sagaMiddleware = createSagaMiddleware()
+
+/**
+ * Add saga back into webpack vendor files when ready
+ *  Code split it... it doesn't really do anything right now...
+ *  It's just hooked up.
+ */
 
 let middleware;
-process.env.NODE_ENV !== 'production' && process.env.NODE_ENV !== 'test' ? middleware = (0, _redux.applyMiddleware)(sagaMiddleware, _reduxThunk2.default, _reduxLogger.logger) : middleware = (0, _redux.applyMiddleware)(sagaMiddleware, _reduxThunk2.default);
+process.env.NODE_ENV !== 'production' && process.env.NODE_ENV !== 'test' ? middleware = (0, _redux.applyMiddleware)(_reduxThunk2.default, _reduxLogger.logger) : middleware = (0, _redux.applyMiddleware)(_reduxThunk2.default);
 
 const store = (0, _redux.createStore)(_reducers2.default, middleware);
 
-(0, _initSagas.initSagas)(sagaMiddleware);
+// initSagas(sagaMiddleware)
 
 exports.default = store;

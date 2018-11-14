@@ -8,11 +8,11 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _searchBar = require('../_actions/searchBar.actions');
+
 var _lodash = require('lodash.debounce');
 
 var _lodash2 = _interopRequireDefault(_lodash);
-
-var _searchBar = require('../_actions/searchBar.actions');
 
 var _reactRedux = require('react-redux');
 

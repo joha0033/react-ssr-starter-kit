@@ -59,6 +59,7 @@ class PostList extends _react2.default.Component {
       null,
       'LOADING... '
     );
+
     return this.props.postList.loading ? loading() : postList();
   }
 }

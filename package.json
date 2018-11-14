@@ -7,14 +7,14 @@
     "lib": "lib"
   },
   "scripts": {
-    "start": "NODE_ENV=production NODE_PATH=./build pm2 start build/server.js -i max --name productionApp",
-    "dev": "NODE_PATH=./lib pm2 start lib/server.js --watch --interpreter babel-node --name developmentApp",
+    "start": "NODE_ENV=production NODE_PATH=./build pm2 start build/server.js -i max --name papp",
+    "dev": "NODE_PATH=./lib pm2 start lib/server.js --watch --interpreter babel-node --name dapp",
     "test": "jest -u",
     "test-watch": "npm test -- --watch",
     "verify-tests": "npm test -- --coverage",
     "webpack": "webpack -wd",
     "build-webpack": "webpack -p",
-    "build-node": "babel lib -d build --copy-files"
+    "build-node": "babel lib -d build --copy-files --ignore 'src/**/*.spec.js'"
   },
   "repository": {
     "type": "git",
@@ -51,11 +51,16 @@
       "transform-object-rest-spread"
     ]
   },
+  "jest": {
+    "verbose": true
+  },
   "dependencies": {
     "axios": "^0.18.0",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.5",
+    "babel-plugin-dynamic-import-node": "^2.2.0",
+    "babel-plugin-dynamic-import-webpack": "^1.1.0",
     "babel-polyfill": "^6.26.0",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
@@ -64,6 +69,7 @@
     "ejs": "^2.6.1",
     "enzyme-adapter-react-16": "^1.5.0",
     "express": "^4.16.3",
+    "html-webpack-plugin": "^3.2.0",
     "isomorphic-fetch": "^2.2.1",
     "lodash.debounce": "^4.0.8",
     "lodash.pickby": "^4.6.0",
@@ -75,7 +81,8 @@
     "redux": "^4.0.0",
     "redux-saga": "^0.16.2",
     "redux-thunk": "^2.3.0",
-    "webpack": "^4.19.0"
+    "webpack": "^4.19.0",
+    "webpack-merge": "^4.1.4"
   },
   "devDependencies": {
     "babel-eslint": "^9.0.0",
