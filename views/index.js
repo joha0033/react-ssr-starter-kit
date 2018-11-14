@@ -15,12 +15,13 @@ const renderFullPage = (html, preloadedState) => (
     /</g,
     '\\u003c')}
       </script>
-      <script src="/vendor.js?version=1" charset="utf-8"></script>
+      <script src="/vendors~app.js?version=1" charset="utf-8"></script>
       <script src="/app.js?version=1" charset="utf-8"></script>
     </body>
   </html>
   `
 )
 
-export default {renderFullPage}
-
+module.exports = {
+  renderFullPage
+}
