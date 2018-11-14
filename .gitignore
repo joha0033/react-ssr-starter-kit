@@ -53,6 +53,7 @@ typings/
 
 # Optional eslint cache
 .eslintcache
+.eslintrc
 
 # Optional REPL history
 .node_repl_history
@@ -156,3 +157,6 @@ typings/
 
 # FuseBox cache
 .fusebox/
+
+#others
+.vscode/
