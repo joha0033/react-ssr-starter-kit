@@ -12,23 +12,11 @@ module.exports = {
     ]
   },
   entry: {
-    vendor: [
-      'babel-polyfill',
-      'react',
-      'react-dom',
-      'redux',
-      'redux-thunk',
-      'react-redux',
-      'prop-types',
-      'axios',
-      // 'lodash.pickby',
-      // 'lodash.debounce'
-    ],
     app: ['./lib/renderers/dom.js']},
   output: {
     path: path.resolve(__dirname, 'public'),
-    chunkFilename: '[name].bundle.js',
-    filename: '[name].js',
+    chunkFilename: '[name].js',
+    // filename: '[name].js',
   },
   module: {
     rules: [
@@ -52,11 +40,11 @@ module.exports = {
       }
     })
   ],
-  // optimization: {
-  //   splitChunks:{
-  //     chunks: 'async'
-  //   } 
-  // }
+  optimization: {
+    splitChunks:{
+      chunks: 'all'
+    } 
+  }
 }
 
 
