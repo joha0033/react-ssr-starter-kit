@@ -159,4 +159,5 @@ typings/
 .fusebox/
 
 #others
-.vscode/
+.vscode
+
