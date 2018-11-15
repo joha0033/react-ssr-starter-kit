@@ -3,7 +3,6 @@ const renderFullPage = (html, preloadedState) => (
   <!doctype html>
   <html>
     <head>
-    <link rel="shortcut icon" type="image/x-icon" href="http://localhost:5000/assets/favicon.ico"/>
       <title>Redux Universal Example</title>
     </head>
     <body>

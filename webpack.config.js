@@ -7,6 +7,7 @@ module.exports = {
   resolve: {
     modules: [
       path.resolve('./lib'),
+      path.resolve('./views'),
       path.resolve('./node_modules'),
       path.resolve('./__tests__')
     ]
@@ -15,7 +16,7 @@ module.exports = {
     app: ['./lib/renderers/dom.js']},
   output: {
     path: path.resolve(__dirname, 'public'),
-    chunkFilename: '[name].js',
+    chunkFilename: '[name].js'
   },
   module: {
     rules: [
