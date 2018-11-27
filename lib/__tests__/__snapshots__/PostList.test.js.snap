@@ -1,0 +1,143 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PostList Component - Container Posts function returns a Post component - [loading: false, searchTer: 'Git'] 1`] = `null`;
+
+exports[`PostList Component - Container Posts function returns a Post component - [loading: false] 1`] = `
+<div
+  style={
+    Object {
+      "borderBottomColor": "#abc",
+      "borderBottomStyle": "solid",
+      "borderBottomWidth": 2,
+      "marginBottom": 10,
+      "paddingBottom": 10,
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "fontWeight": "bold",
+      }
+    }
+  >
+    Github Basics
+  </div>
+  <div
+    style={
+      Object {
+        "paddingBottom": 10,
+        "paddingTop": 10,
+      }
+    }
+  >
+    Author: 
+    austin digger
+  </div>
+  <div
+    style={
+      Object {
+        "paddingLeft": 20,
+        "paddingRight": 10,
+      }
+    }
+  >
+    It actually says that in the little book that comes with it: the most popular gun in American crime. Like they're actually proud of that shit. 
+  </div>
+</div>
+`;
+
+exports[`PostList Component - Container Renders PostList to equal snapshot [loading: false] 1`] = `
+Array [
+  <div
+    style={
+      Object {
+        "borderBottomColor": "#abc",
+        "borderBottomStyle": "solid",
+        "borderBottomWidth": 2,
+        "marginBottom": 10,
+        "paddingBottom": 10,
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "fontWeight": "bold",
+        }
+      }
+    >
+      Github Basics
+    </div>
+    <div
+      style={
+        Object {
+          "paddingBottom": 10,
+          "paddingTop": 10,
+        }
+      }
+    >
+      Author: 
+      austin digger
+    </div>
+    <div
+      style={
+        Object {
+          "paddingLeft": 20,
+          "paddingRight": 10,
+        }
+      }
+    >
+      It actually says that in the little book that comes with it: the most popular gun in American crime. Like they're actually proud of that shit. 
+    </div>
+  </div>,
+  <div
+    style={
+      Object {
+        "borderBottomColor": "#abc",
+        "borderBottomStyle": "solid",
+        "borderBottomWidth": 2,
+        "marginBottom": 10,
+        "paddingBottom": 10,
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "fontWeight": "bold",
+        }
+      }
+    >
+      CLI Basics
+    </div>
+    <div
+      style={
+        Object {
+          "paddingBottom": 10,
+          "paddingTop": 10,
+        }
+      }
+    >
+      Author: 
+      austin digger
+    </div>
+    <div
+      style={
+        Object {
+          "paddingLeft": 20,
+          "paddingRight": 10,
+        }
+      }
+    >
+      It actually says that in the little book that comes with it: the most popular gun in American crime. Like they're actually proud of that shit. 
+    </div>
+  </div>,
+]
+`;
+
+exports[`PostList Component - Container Renders PostList to equal snapshot [loading: true] 1`] = `
+<div>
+  LOADING... 
+</div>
+`;

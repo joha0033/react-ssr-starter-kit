@@ -13,7 +13,8 @@ module.exports = {
     ]
   },
   entry: {
-    app: ['./lib/renderers/dom.js']},
+    app: ['./lib/renderers/dom.js']
+  },
   output: {
     path: path.resolve(__dirname, 'public'),
     chunkFilename: '[name].js'
