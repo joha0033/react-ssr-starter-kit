@@ -8,11 +8,12 @@
   },
   "scripts": {
     "start": "NODE_ENV=production NODE_PATH=./build pm2 start build/server/server.js -i max --name papp",
-    "dev": "NODE_PATH=./lib pm2 start lib//server/server.js --watch --interpreter babel-node --name dapp",
+    "dev": "NODE_PATH=./lib pm2 start lib/server/server.js --watch --interpreter babel-node --name dapp",
     "test": "jest -u",
-    "test-watch": "npm test -- --watch",
+    "watch-tests": "npm test -- --watch",
     "verify-tests": "npm test -- --coverage",
-    "webpack": "webpack -wd",
+    "watch-webpack": "webpack -wd",
+    "webpack": "webpack -d",
     "build-webpack": "webpack -p",
     "build-node": "babel lib -d build --copy-files --ignore 'lib/**/*.test.js','lib/**/*.mock.js'"
   },
@@ -78,6 +79,7 @@
     "react-dom": "^16.6.1",
     "react-helmet": "^5.2.0",
     "react-redux": "^5.0.7",
+    "react-router-dom": "^4.3.1",
     "redux": "^4.0.0",
     "redux-saga": "^0.16.2",
     "redux-thunk": "^2.3.0",
