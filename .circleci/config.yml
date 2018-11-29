@@ -5,10 +5,10 @@
 version: 2
 jobs:
   build:
-  branches:
-      only:
-        - master
-        - circleci
+    branches:
+        only:
+          - master
+          - circleci
     docker:
       # specify the version you desire here
       - image: circleci/node:8.10
