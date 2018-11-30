@@ -2,12 +2,13 @@
   "name": "react-ssr-starter-kit",
   "version": "1.0.0",
   "description": "React Serverside render starter kit v1",
-  "main": "lib/server.js",
+  "main": "lib/server/server.js",
   "directories": {
     "lib": "lib"
   },
   "scripts": {
     "start": "NODE_ENV=production NODE_PATH=./build pm2 start build/server/server.js -i max --name papp",
+    // "start": "NODE_ENV=production NODE_PATH=./build pm2 start build/server/server.js -i max --name papp",
     "dev": "NODE_PATH=./lib pm2 start lib/server/server.js --watch --interpreter babel-node --name dapp",
     "test": "jest -u",
     "watch-tests": "npm test -- --watch",
@@ -29,7 +30,7 @@
     "render",
     "express"
   ],
-  "author": "roam",
+  "author": "ajDevs",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/joha0033/react-ssr-starter-kit/issues"
