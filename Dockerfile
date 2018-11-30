@@ -1,9 +1,11 @@
 FROM keymetrics/pm2:latest-alpine
 
-# Bundle APP files
+
+RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 
 COPY package.json .
+COPY package-lock.json .
 COPY pm2.json .
 
 # Install app dependencies
@@ -11,7 +13,6 @@ RUN npm install
 
 COPY . .
 
-#RUN ls -al -R
 EXPOSE 5000
 
 RUN npm run build-webpack
