@@ -6,7 +6,11 @@
   "directories": {
     "lib": "lib"
   },
+  "engines":{
+    "node": "8.10.0"
+  },
   "scripts": {
+    "heroku-postbuild": "npm run build-webpack && npm run build-node",
     "start": "NODE_ENV=production NODE_PATH=./build pm2 start build/server/server.js -i max --name papp",
     "dev": "NODE_PATH=./lib pm2 start lib/server/server.js --watch --interpreter babel-node --name dapp",
     "test": "jest -u",
