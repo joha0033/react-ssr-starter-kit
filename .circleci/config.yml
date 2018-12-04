@@ -9,10 +9,10 @@ jobs:
       - run: npm run build-webpack
       - run: npm run build-node
 
-      - save_cache:
-          paths:
-            - node_modules
-          key: v1-dependencies-{{ checksum "package.json" }}
+      # - save_cache:
+      #     paths:
+      #       - node_modules
+      #     key: v1-dependencies-{{ checksum "package.json" }}
   test:
     docker:
       - image: circleci/node:8

@@ -19,7 +19,7 @@
     "watch-webpack": "webpack -wd",
     "webpack": "webpack -d",
     "build-webpack": "webpack -p",
-    "build-node": "babel lib -d build --copy-files --ignore 'lib/**/*.test.js','lib/**/*.mock.js'"
+    "build-node": "babel lib -d build --copy-files"
   },
   "repository": {
     "type": "git",
